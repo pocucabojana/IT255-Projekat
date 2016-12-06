@@ -1,0 +1,11 @@
+<form role="form" [ngFormModel]="dodajVrstuPica">
+<div class="alert alert-danger" style="display: none;">
+  
+</div>
+ <div class="form-group">
+    <!--<label for="roomName">Ime pića:</label>-->
+     <h3 class="mainpagefont">Navedi kategoriju:</h3>
+    <input type="text" class="form-control" ngControl='ime'>
+  </div>
+  <button (click)="onDodajVrstuPica()" class="btn btn-default">Dodaj vrstu pića</button>
+</form>

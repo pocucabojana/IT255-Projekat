@@ -1,0 +1,24 @@
+<form role="form" [ngFormModel]="dodajPice">
+<div class="alert alert-danger" style="display: none;">
+
+</div>
+ <div class="form-group">
+    <label for="roomName">Piće:</label>
+    <input type="text" class="form-control" ngControl='ime'>
+  </div>
+  <div class="form-group">
+    <label for="kategorija_proizvoda">Iz kategorije:</label>
+	<select #selectOption (change)='select=selectOption.value' class="form-control" ng-selected="Yes" >
+		 <option *ngFor="#type of vrsta_pica" [value]="type.VRSTA_PICA_ID">{{type.VRSTA_PICA_IME}}</option>
+	</select>
+  </div>
+  <div class="form-group">
+    <label for="beds">Cena:</label>
+    <input type="text" class="form-control"  ngControl='cena'>
+  </div>
+  <div class="form-group">
+    <label for="beds">Opis:</label>
+    <input type="text" class="form-control"  ngControl='opis'>
+  </div>
+  <button (click)="onDodajPice()" class="btn btn-default">Dodaj piće..</button>
+</form>

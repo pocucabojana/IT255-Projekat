@@ -1,0 +1,23 @@
+<div class="col-lg-12">
+	<table  class="display" cellspacing="0" >
+	    <thead>
+            <tr>
+                <th>ID:</th>
+                <th>Ime: </th>
+                <th>Brisanje: </th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr *ngFor="#bla of vrsta_pica">
+                <td>{{bla.VRSTA_PICA_ID}}</td>
+                <td>{{bla.VRSTA_PICA_IME}}</td>
+                <td>
+                    <button class="btn btn-danger" title="remove" (click)="removeVrstaPica(bla.VRSTA_PICA_ID)">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

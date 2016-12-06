@@ -1,0 +1,39 @@
+      <nav class="navbar navbar-default">
+         <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-brand-centered">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               </button>
+                <div *ngIf="isAuth == 'no'" [class.active]="router.isRouteActive(router.generate(['/MainPage']))">
+               <a class="navbar-brand navbar-brand-centered" [routerLink]="['./MainPage']">Met Kafić</a>
+                </div>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-brand-centered">
+                <ul class="nav navbar-nav">
+                    <li *ngIf="isAuth == 'yes'" [class.active]="router.isRouteActive(router.generate(['/MainPage']))"><a [routerLink]="['./MainPage']">Početna strana</a></li>
+                    <li *ngIf="isAuth == 'yes'" [class.active]="router.isRouteActive(router.generate(['/DodajVrstuPica']))"><a [routerLink]="['./DodajVrstuPica']">Dodaj vrstu pića</a></li>
+                    <li *ngIf="isAuth == 'yes'" [class.active]="router.isRouteActive(router.generate(['/SveVrstePica']))"><a [routerLink]="['./SveVrstePica']">Sve vrste pića</a></li>
+                    <li *ngIf="isAuth == 'yes'" [class.active]="router.isRouteActive(router.generate(['/DodajPice']))"><a [routerLink]="['./DodajPice']">Dodaj piće</a></li>
+                    <li *ngIf="isAuth == 'yes'" [class.active]="router.isRouteActive(router.generate(['/SvaPica']))"><a [routerLink]="['./SvaPica']">Sva pića</a></li>
+                    <li *ngIf="isAuth == 'yes'" [class.active]="router.isRouteActive(router.generate(['/SvePorudzbine']))"><a [routerLink]="['./SvePorudzbine']">Sve porudžbine</a></li>
+                    <li *ngIf="isAuth == 'yes'" ><a (click)="onLogout()">Logout</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                   <li *ngIf="isAuth == 'no'" [class.active]="router.isRouteActive(router.generate(['/LoginPage']))"><a [routerLink]="['./LoginPage']">Login</a></li>
+                   <li *ngIf="isAuth == 'no'" [class.active]="router.isRouteActive(router.generate(['/RegisterPage']))"><a [routerLink]="['./RegisterPage']">Register</a></li>
+
+               </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+         </div>
+         <!-- /.container-fluid -->
+      </nav>
+	  <div class="container">
+		<router-outlet></router-outlet>
+	  </div>

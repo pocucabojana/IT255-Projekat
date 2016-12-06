@@ -1,0 +1,33 @@
+<div class="col-lg-12">
+	<table  class="display" cellspacing="0" >
+	    <thead>
+            <tr>
+                <th>Piće: </th>
+                <th>Iz kategorije: </th>
+                <th>Cena: </th>
+                <th>Opis: </th>
+                <th>Brisanje: </th>
+                <th>Naručivanje: </th>
+            </tr>
+        </thead>
+        
+        <tbody>
+            <tr *ngFor="#bla of picence">
+                <td>{{bla.PICE_IME}}</td>
+                <td>{{bla.VRSTA_PICA_IME}}</td>
+                <td>{{bla.PICE_CENA}}</td>
+                <td>{{bla.PICE_OPIS}}</td>
+				 <td>
+                   <button class="btn btn-danger" title="remove" (click)="removeProduct(bla.PICE_ID)">
+                      <span class="glyphicon glyphicon-remove"></span>
+                   </button>
+                </td>
+                <td>
+                   <button class="btn btn-danger" title="order" (click)="naruciPice(bla.PICE_ID)">
+                      <span class="glyphicon glyphicon-shopping-cart"></span>
+                   </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
